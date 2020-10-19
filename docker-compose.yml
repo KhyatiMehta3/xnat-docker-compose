@@ -37,7 +37,8 @@ services:
   xnat-nginx:
     build: ./nginx
     ports:
-      - "80:80"
+      - "81:80"
+      - "8443:8443"
     expose:
       - "80"
     links:
