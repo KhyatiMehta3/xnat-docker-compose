@@ -1,7 +1,7 @@
 FROM tomcat:7-jre8-alpine
 MAINTAINER Matt Kelsey <kelseym@wustl.edu>
 
-ARG XNAT_VER=1.7.6
+ARG XNAT_VER=1.8.0
 ARG XNAT_ROOT=/data/xnat
 ARG XNAT_HOME=/data/xnat/home
 ARG XNAT_DATASOURCE_DRIVER=org.postgresql.Driver
@@ -31,9 +31,9 @@ RUN mkdir -p \
         ${XNAT_ROOT}/prearchive
 RUN /usr/local/bin/make-xnat-config.sh
 RUN rm /usr/local/bin/make-xnat-config.sh
-RUN wget --no-verbose --output-document=/tmp/xnat-web-${XNAT_VER}.war https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-${XNAT_VER}.war
-RUN unzip -o -d ${TOMCAT_XNAT_FOLDER_PATH} /tmp/xnat-web-${XNAT_VER}.war
-RUN rm -f /tmp/xnat-web-${XNAT_VER}.war
+RUN wget --no-verbose --output-document=/tmp/xnat-web-1.8.0.war https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-web/downloads/xnat-web-1.8.0.war
+RUN unzip -o -d ${TOMCAT_XNAT_FOLDER_PATH} /tmp/xnat-web-1.8.0.war
+RUN rm -f /tmp/xnat-web-1.8.0.war
 RUN apk del wget
 
 EXPOSE 8080

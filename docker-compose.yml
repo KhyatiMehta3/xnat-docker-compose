@@ -4,7 +4,7 @@ services:
     build:
       context: ./xnat
       args:
-        XNAT_VER: ${XNAT_VER}
+        XNAT_VER: 1.8.0
         XNAT_DATASOURCE_DRIVER: ${XNAT_DATASOURCE_DRIVER}
         XNAT_DATASOURCE_URL: ${XNAT_DATASOURCE_URL}
         XNAT_DATASOURCE_USERNAME: ${XNAT_DATASOURCE_USERNAME}
